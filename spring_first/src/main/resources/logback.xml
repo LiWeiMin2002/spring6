@@ -1,0 +1,35 @@
+<configuration>
+<!--    &lt;!&ndash; 定义日志输出格式 &ndash;&gt;-->
+<!--    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"/>-->
+
+<!--    &lt;!&ndash; 控制台输出 &ndash;&gt;-->
+<!--    <appender name="spring6log" class="com.lwm.spring6.TestUser">-->
+<!--        <encoder>-->
+<!--            <pattern>${LOG_PATTERN}</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash; 文件输出 &ndash;&gt;-->
+<!--    <appender name="rollingFile" class="com.lwm.spring6.TestUser">-->
+<!--        <file>logs/testUser.log</file>-->
+<!--        <rollingPolicy class="com.lwm.spring6.TestUser">-->
+<!--            <fileNamePattern>logs/testUser.%d{yyyy-MM-dd}.log</fileNamePattern>-->
+<!--            <maxHistory>30</maxHistory>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder>-->
+<!--            <pattern>${LOG_PATTERN}</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash; 日志级别配置 &ndash;&gt;-->
+<!--    <root level="DEBUG">-->
+<!--        <appender-ref ref="spring6log"/>-->
+<!--        <appender-ref ref="rollingFile"/>-->
+<!--        <appender-ref ref="log"/>-->
+<!--    </root>-->
+
+<!--    &lt;!&ndash; 特定包或类的日志级别 &ndash;&gt;-->
+<!--    <logger name="com.example" level="debug" additivity="false">-->
+<!--        <appender-ref ref="spring"/>-->
+<!--    </logger>-->
+</configuration>

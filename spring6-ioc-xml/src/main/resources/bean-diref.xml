@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="lesson1" class="com.lwm.spring6.iocxml.dimap.Lesson">
+        <property name="lessonName" value="语文"></property>
+    </bean>
+    <bean id="lesson2" class="com.lwm.spring6.iocxml.dimap.Lesson">
+        <property name="lessonName" value="数学"></property>
+    </bean>
+
+
+
+    <bean id="teacher1" class="com.lwm.spring6.iocxml.dimap.Teacher">
+        <property name="teacherId" value="10001"></property>
+        <property name="teacherName" value="李老师"></property>
+    </bean>
+    <bean id="teacher2" class="com.lwm.spring6.iocxml.dimap.Teacher">
+        <property name="teacherId" value="10002"></property>
+        <property name="teacherName" value="王老师"></property>
+    </bean>
+
+
+    <util:list id="lessonList">
+        <ref bean="lesson1"></ref>
+        <ref bean="lesson2"></ref>
+    </util:list>
+
+    <util:map id="studentMap">
+        <entry>
+            <key>
+                <value>1</value>
+            </key>
+            <ref bean="teacher1"></ref>
+        </entry>
+        <entry>
+            <key>
+                <value>2</value>
+            </key>
+            <ref bean="teacher2"></ref>
+        </entry>
+    </util:map>
+
+    <bean id="student" class="com.lwm.spring6.iocxml.dimap.Student">
+        <property name="studentId" value="20001"></property>
+        <property name="studentName" value="张三"></property>
+        <property name="studentMap" ref="studentMap"></property>
+        <property name="lessonList" ref="lessonList"></property>
+    </bean>
+
+
+
+
+
+</beans>
