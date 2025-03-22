@@ -1,8 +1,8 @@
 package com.lwm.spring6.iocxml.di;
 
 /**
- * @Author LWM
- * @Date 2025/3/21 18:50
+ *  LWM
+ *  2025/3/21 18:50
  **/
 public class Book {
     private String name;
