@@ -4,8 +4,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @Author LWM
- * @Date 2025/3/21 21:14
+ *  LWM
+ *  2025/3/21 21:14
  **/
 public class TestEmp {
 

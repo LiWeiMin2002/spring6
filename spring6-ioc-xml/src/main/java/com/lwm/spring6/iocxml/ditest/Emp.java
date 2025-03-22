@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * 员工
  *
- * @Author LWM
- * @Date 2025/3/21 20:55
+ *  LWM
+ *  2025/3/21 20:55
  **/
 public class Emp {
 

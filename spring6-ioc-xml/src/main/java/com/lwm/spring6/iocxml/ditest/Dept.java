@@ -4,8 +4,8 @@ import java.util.List;
 
 /**
  * 部门
- * @Author LWM
- * @Date 2025/3/21 20:54
+ *  LWM
+ *  2025/3/21 20:54
  **/
 public class Dept {
     private String dName;

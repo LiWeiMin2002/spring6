@@ -1,8 +1,8 @@
 package com.lwm.spring6.iocxml.dimap;
 
 /**
- * @Author LWM
- * @Date 2025/3/21 22:16
+ *  LWM
+ *  2025/3/21 22:16
  **/
 public class Lesson {
     private String lessonName;

@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Author LWM
- * @Date 2025/3/21 21:58
+ *  LWM
+ *  2025/3/21 21:58
  **/
 public class Student {
     private List<Lesson> lessonList;

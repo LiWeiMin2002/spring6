@@ -4,8 +4,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @Author LWM
- * @Date 2025/3/21 21:55
+ *  LWM
+ *  2025/3/21 21:55
  **/
 public class TestDept {
     public static void main(String[] args) {

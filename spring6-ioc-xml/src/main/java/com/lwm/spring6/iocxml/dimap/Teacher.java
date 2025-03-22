@@ -3,8 +3,8 @@ package com.lwm.spring6.iocxml.dimap;
 import java.util.Map;
 
 /**
- * @Author LWM
- * @Date 2025/3/21 21:59
+ *  LWM
+ *  2025/3/21 21:59
  **/
 public class Teacher {
     private String teacherId;

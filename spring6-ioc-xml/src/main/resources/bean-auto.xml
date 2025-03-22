@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--根据类型注入-->
+    <bean id="userController" class="com.lwm.spring6.iocxml.auto.controller.UserController" autowire="byType"></bean>
+
+
+    <bean id="userServiceImp" class="com.lwm.spring6.iocxml.auto.service.UserServiceImp" autowire="byType"></bean>
+
+
+    <bean id="userDaoImp" class="com.lwm.spring6.iocxml.auto.dao.UserDaoImp"></bean>
+
+
+    <!--    &lt;!&ndash;根据名称注入&ndash;&gt;-->
+    <!--    <bean id="userController" class="com.lwm.spring6.iocxml.auto.controller.UserController" autowire="byName"></bean>-->
+
+
+    <!--    <bean id="userServiceImp" class="com.lwm.spring6.iocxml.auto.service.UserServiceImp" autowire="byName"></bean>-->
+
+
+    <!--    <bean id="userDaoImp" class="com.lwm.spring6.iocxml.auto.dao.UserDaoImp"></bean>-->
+
+
+</beans>
