@@ -5,4 +5,5 @@ package com.lwm.service;
  * 2025/3/23 17:48
  **/
 public interface UserService {
+    void add();
 }
