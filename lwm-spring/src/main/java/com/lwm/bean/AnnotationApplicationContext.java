@@ -1,13 +1,16 @@
 package com.lwm.bean;
 
 import com.lwm.anno.Bean;
+import com.lwm.anno.Di;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 
 /**
@@ -41,6 +44,7 @@ public class AnnotationApplicationContext implements ApplicationContext {
                 rootPath = filePath.substring(0, filePath.length() - packagePath.length());
                 //    包的扫描
                 loadBean(new File(filePath));
+                loadDi();
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -50,6 +54,7 @@ public class AnnotationApplicationContext implements ApplicationContext {
 
     //    包扫描的方法
     private void loadBean(File file) throws Exception {
+        //bean的创建
         //   1.判断当前是否是文件夹
         if (file.isDirectory()) {
             //    2.获取文件夹里面的所有内容
@@ -93,4 +98,39 @@ public class AnnotationApplicationContext implements ApplicationContext {
             }
         }
     }
+
+
+    //    属性注入
+    private void loadDi() {
+        //实例化对象在beanFactory的Map集合中
+        //1.遍历beanFactory的Map集合
+        Set<Map.Entry<Class, Object>> entries = beanFactory.entrySet();
+        for (Map.Entry<Class, Object> entry : entries) {
+            //2.获取Map集合的每个对象（value），每个对象属性
+            Object obj = entry.getValue();
+            //获取对象Class
+            Class<?> clazz = obj.getClass();
+            //获取每个对象属性
+            Field[] declaredFields = clazz.getDeclaredFields();
+            //3.遍历得到的每个对象属性数组，得到每个属性
+            for (Field field : declaredFields) {
+                //4.判断属性上面是否有@Di注解
+                Di di = field.getAnnotation(Di.class);
+                if (di != null) {
+                    //设置私有属性可以被修改
+                    field.setAccessible(true);
+                    try {
+                        //5.如果有@Di注解，把对象进行注入
+                        field.set(obj, beanFactory.get(field.getType()));
+                    } catch (IllegalAccessException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
 }
